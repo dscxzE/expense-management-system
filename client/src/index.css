@@ -4,8 +4,74 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
 .content {
-  height: 100%;
+  background-color: #2d2d2d;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Dark theme overrides */
+.ant-table {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+.ant-table-tbody > tr > td {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.ant-select-selector {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+.ant-modal-content,
+.ant-modal-header {
+  background-color: #2d2d2d !important;
+  color: #fff !important;
+}
+
+.ant-modal-title {
+  color: #fff !important;
+}
+
+.ant-input,
+.ant-input-password {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #000 !important;
+}
+
+.ant-input-password-icon,
+.ant-input-prefix {
+  color: #000 !important;
+}
+
+/* Select dropdown styles */
+.ant-select-dropdown {
+  background-color: #2d2d2d !important;
+}
+
+.ant-select-item {
+  color: #fff !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: #1a1a1a !important;
+}
+
+.ant-select-item-option-active {
+  background-color: #3a3a3a !important;
 }
 
 /* transaction page */
@@ -41,4 +107,18 @@
 
 .filter-tab .ant-select-selector {
   width: 150px !important;
+}
+
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  margin-top: auto;
 }

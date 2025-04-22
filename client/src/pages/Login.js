@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
+
+import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import "../styles/Loginpage.css";
@@ -35,28 +37,61 @@ const Login = () => {
   }, [navigate]);
   return (
     <>
-      <div className="login-page ">
+      <div className="login-page">
         {loading && <Spinner />}
         <div className="row container">
-          <h1>Expsanse Managment System - MERN STACK</h1>
-          <div className="col-md-6">
-            <img src={img} alt="login-img" width={"100%"} height="100%" />
+          <div className="text-center mb-5">
+            <h1>
+              <span className="text-primary">Expense</span> Management System
+            </h1>
+            <p className="text-light">Track your finances with ease</p>
           </div>
-          <div className="col-md-4 login-form">
+          <div className="col-md-6 img-container">
+            <img
+              src={img}
+              alt="login-img"
+              width={"100%"}
+              height="100%"
+              className="rounded shadow"
+            />
+          </div>
+          <div className="col-md-4 offset-md-1 login-form">
             <Form layout="vertical" onFinish={submitHandler}>
-              <h1>Login Form</h1>
+              <h1>Welcome Back</h1>
+              <p className="text-light mb-4">Please sign in to continue</p>
 
-              <Form.Item label="Email" name="email">
-                <Input type="email" required />
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your email!",
+                    type: "email",
+                  },
+                ]}
+              >
+                <Input prefix={<MailOutlined />} type="email" />
               </Form.Item>
-              <Form.Item label="Password" name="password">
-                <Input type="password" required />
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your password!",
+                  },
+                ]}
+              >
+                <Input.Password prefix={<LockOutlined />} />
               </Form.Item>
-              <div className="d-flex justify-content-between">
-                <Link to="/register">
-                  Not a user ? Click Here to regsiter !
-                </Link>
-                <button className="btn">Login</button>
+              <div className="d-flex flex-column gap-2">
+                <button className="btn w-100">Sign In</button>
+                <div className="text-center mt-3">
+                  <Link to="/register">
+                    Don't have an account? Register now
+                  </Link>
+                </div>
               </div>
             </Form>
           </div>

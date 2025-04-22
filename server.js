@@ -23,14 +23,14 @@ app.use(cors());
 //user routes
 app.use("/users", require("./routes/userRoute"));
 //transactions routes
-app.use("/transactions", require("./routes/transectionRoutes"));
+app.use("/transactions", require("./routes/transactionRoutes"));
 
-//static files
-app.use(express.static(path.join(__dirname, "./client/build")));
+// //static files
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 //port
 const PORT = 8080 || process.env.PORT;

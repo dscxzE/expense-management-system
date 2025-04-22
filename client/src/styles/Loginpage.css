@@ -1,42 +1,98 @@
 .login-page {
-  height: 100vh !important;
-  width: 100vw !important;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #1a1a1a, #2d2d2d);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .login-page h1 {
-}
-.login-form {
-  background-color: #b9bcccb6;
-  margin-left: -15px;
-  padding: 30px;
-}
-
-.login-form h1 {
+  color: #fff;
   text-align: center;
-  font-weight: bold;
-  margin: 30px;
-  color: #344265;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.login-form .ant-form-item-label label {
-  color: #344265 !important;
+.login-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.login-form button {
-  background-color: #344265;
+
+.login-form .ant-form-item-label > label {
+  color: #fff !important;
+  font-size: 1rem;
+}
+
+.login-form input,
+.login-form .ant-input-password {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.login-form .ant-input-password-icon {
+  color: #000;
+}
+
+.login-form .anticon {
+  color: #000;
+}
+
+.login-form input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #1890ff;
+  box-shadow: 0 0 5px rgba(24, 144, 255, 0.5);
+}
+
+.login-form .btn {
+  background: #1890ff;
   color: white;
-  outline: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
-.login-form button:hover {
-  background-color: black;
-  color: white;
+
+.login-form .btn:hover {
+  background: #096dd9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.4);
 }
+
 .login-form a {
-  color: #344265 !important;
+  color: #1890ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .login-form a:hover {
-  color: black !important;
+  color: #40a9ff;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.img-container img {
+  transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
 }
